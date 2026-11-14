@@ -15,8 +15,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://calmcampus-app.netlify.app",
-    "https://nimble-kangaroo-ab5807.netlify.app"
+    "https://calmcampus-app.vercel.app"
   ],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
