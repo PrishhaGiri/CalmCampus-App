@@ -11,16 +11,16 @@ dotenv.config();
 const app = express();
 
 // Allow both local development and deployed frontend
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://calmcampus-app.netlify.app"
-    ],
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-  })
-);
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://calmcampus-app.netlify.app",
+    "https://nimble-kangaroo-ab5807.netlify.app"
+  ],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 app.use(express.json({ limit: "20kb" }));
 
