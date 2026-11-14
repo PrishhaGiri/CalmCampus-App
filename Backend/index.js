@@ -10,11 +10,15 @@ dotenv.config();
 
 const app = express();
 
+// Allow both local development and deployed frontend
 app.use(
   cors({
-    origin:
-      process.env.FRONTEND_URL ||
+    origin: [
       "http://localhost:5173",
+      "https://calmcampus-app.netlify.app"
+    ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
   })
 );
 
